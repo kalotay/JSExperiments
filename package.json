@@ -12,5 +12,8 @@
   },
   "author": "Daniel Kalotay",
   "license": "BSD",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "mocha": "~1.7.4"
+  }
 }
