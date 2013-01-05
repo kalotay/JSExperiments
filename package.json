@@ -1,0 +1,16 @@
+{
+  "name": "JSExperiments",
+  "version": "0.0.0",
+  "description": "Experiments in Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kalotay/JSExperiments.git"
+  },
+  "author": "Daniel Kalotay",
+  "license": "BSD",
+  "readmeFilename": "README.md"
+}
