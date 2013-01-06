@@ -1,5 +1,6 @@
 test:
 	./node_modules/.bin/mocha \
-		--reporter spec
+		--reporter spec \
+		--require should
 
 .PHONY: test
