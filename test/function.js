@@ -13,14 +13,13 @@ describe('function', function () {
       var toCsv2 = variadic(function (args) {
         return args.join()
       })
+        , first = 'a'
+        , second = 'b'
+        , third = 'c'
+        , expected = toCsv(first, second, third)
+        , actual = toCsv2(first, second, third)
 
-      , first = 'a'
-      , second = 'b'
-      , third = 'c'
-      , expected = toCsv(first, second, third)
-      , actual = toCsv2(first, second, third)
-
-      expected.should.equal(actual)
+      actual.should.equal(expected)
     })
     it('should split fixed from variadic arguments', function () {
       function podium(winner) {
@@ -32,13 +31,13 @@ describe('function', function () {
       var podium2 = variadic(function (winner, losers) {
         return 'Winner: ' + winner + ' Losers: ' + losers
       })
-      , winner = 'The Best'
-      , second = 'Not as good'
-      , third = 'Rubbish'
-      , expected = podium(winner, second, third)
-      , actual = podium2(winner, second, third)
+        , winner = 'The Best'
+        , second = 'Not as good'
+        , third = 'Rubbish'
+        , expected = podium(winner, second, third)
+        , actual = podium2(winner, second, third)
 
-      expected.should.equal(actual)
+      actual.should.equal(expected)
     })
   })
 
@@ -48,6 +47,7 @@ describe('function', function () {
       function greet(greeterFirstName, greeterLastName, greetee) {
         return 'Hello, ' + greetee + '. I am ' + greeterFirstName + ' ' + greeterLastName
       }
+
       var firstName = 'Dan'
         , lastName = 'Kalotay'
         , greetee = 'Bob'
