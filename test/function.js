@@ -41,4 +41,22 @@ describe('function', function () {
       expected.should.equal(actual)
     })
   })
+
+  describe('applyLeft', function () {
+    var applyLeft = _function.applyLeft
+    it('should partially apply a function', function () {
+      function greet(greeterFirstName, greeterLastName, greetee) {
+        return 'Hello, ' + greetee + '. I am ' + greeterFirstName + ' ' + greeterLastName
+      }
+      var firstName = 'Dan'
+        , lastName = 'Kalotay'
+        , greetee = 'Bob'
+        , expected = greet(firstName, lastName, greetee)
+        , partial1 = applyLeft(greet, firstName, lastName)
+        , partial2 = applyLeft(greet, firstName)
+
+      partial1(greetee).should.equal(expected)
+      partial2(lastName, greetee).should.equal(expected)
+    })
+  })
 })
